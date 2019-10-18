@@ -1,7 +1,7 @@
 # cohttp-request-demo
 
 
-[![CircleCI](https://circleci.com/gh/yourgithubhandle/cohttp-request-demo/tree/master.svg?style=svg)](https://circleci.com/gh/yourgithubhandle/cohttp-request-demo/tree/master)
+[![CircleCI](https://circleci.com/gh/sgrove/cohttp-request-demo/tree/master.svg?style=svg)](https://circleci.com/gh/sgrove/cohttp-request-demo/tree/master)
 
 
 **Contains the following libraries and executables:**
@@ -29,7 +29,7 @@ cohttp-request-demo@0.0.0
 
 ```
 npm install -g esy
-git clone <this-repo>
+git clone https://github.com/sgrove/esy-cohttp-example.git
 esy install
 esy build
 ```
