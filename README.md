@@ -30,6 +30,7 @@ cohttp-request-demo@0.0.0
 ```
 npm install -g esy
 git clone https://github.com/sgrove/esy-cohttp-example.git
+cd esy-cohttp-example
 esy install
 esy build
 ```
