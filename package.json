@@ -1,0 +1,54 @@
+{
+  "name": "cohttp-request-demo",
+  "version": "0.0.0",
+  "description": "My Project",
+  "esy": {
+    "build": "dune build -p <PACKAGE_NAME>",
+    "buildDev": "pesy",
+    "release": {
+      "releasedBinaries": [
+        "CohttpRequestDemoApp.exe"
+      ]
+    }
+  },
+  "buildDirs": {
+    "test": {
+      "require": ["cohttp-request-demo.lib"],
+      "main": "TestCohttpRequestDemo",
+      "name": "TestCohttpRequestDemo.exe"
+    },
+    "library": {
+      "name": "cohttp-request-demo.lib",
+      "namespace": "CohttpRequestDemo"
+    },
+    "executable": {
+      "preprocess": ["pps", "ppx_let"],
+      "require": ["cohttp-request-demo.lib", "cohttp-async", "async", "base", "core", "yojson"],
+      "main": "CohttpRequestDemoApp",
+      "name": "CohttpRequestDemoApp.exe"
+    }
+  },
+  "scripts": {
+    "pesy": "bash -c 'env PESY_MODE=update pesy'",
+    "start": "nodemon --delay '200ms' --watch src/ re,ml --exec 'dune build executable/CohttpRequestDemoApp.bc'",
+    "test": "esy x TestCohttpRequestDemo.exe"
+  },
+  "dependencies": {
+    "@opam/dune": ">=1.6.0",
+    "@esy-ocaml/reason": "*",
+    "ocaml": "^4.4.0",
+    "@opam/async": "v0.12.0",
+    "@opam/async_ssl": "v0.12.0",
+    "@opam/base": "v0.12.2",
+    "@opam/cohttp-async": "2.3.0",
+    "@opam/ppx_let": "v0.12.0",
+    "@opam/yojson": "1.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "*",
+    "ocaml": "4.7.1004",
+    "pesy": "*",
+    "refmterr": "*",
+    "@opam/merlin": "*"
+  }
+}
